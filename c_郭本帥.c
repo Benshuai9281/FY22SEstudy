@@ -1,3 +1,5 @@
+
 int main(void){
-  printf("hello kaku!");
-}
+  printf("hello kaku!\n");
+  return 0;
+  }
