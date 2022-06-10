@@ -1,3 +1,69 @@
 h1 {
   color:indianred
 }
+
+body {
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+header {
+  background-color: blanchedalmond;
+}
+
+.main {
+  /* background-color: honeydew; */
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo {
+  background-color: blanchedalmond;
+}
+
+#bot {
+  cursor: pointer;
+}
+
+img {
+  border-radius: 100px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: lightyellow;
+}
+
+.changed {
+  transition-property: border-radius;
+  transition-duration: 1s;
+  border-radius: 0;
+}
+
+.info {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.info p {
+  font-size: large;
+}
+
+.info ul {
+  list-style-type: disc;
+  text-align: left;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 60px;
+  color: gray;
+}
+
+
