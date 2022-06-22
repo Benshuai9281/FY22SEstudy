@@ -27,7 +27,7 @@
 
 .main {
   background-color: seashell;
-  border-radius: 30px;
+  border-radius: 0px;
   border-width: 3px;
   border-style: solid;
   border-color: firebrick;
@@ -35,7 +35,7 @@
 
 .cpu {
   background-color: seashell;
-  border-radius: 30px;
+  border-radius: 0px;
   border-width: 3px;
   border-style: solid;
   border-color: blue;
