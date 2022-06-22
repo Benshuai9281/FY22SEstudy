@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container2 {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.img-fit {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.message {
+  /* background-color: aqua; */
+}
+
+.main {
+  background-color: seashell;
+  border-radius: 30px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: firebrick;
+}
+
+.cpu {
+  background-color: seashell;
+  border-radius: 30px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: blue;
+}
+
+.controller {
+  background-color: azure;
+}

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 20vh;
+  align-items: center;
+}
+
+span#good {
+  transition: color 2s;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+span#good:hover {
+  transform: scale(1.5, 1.5);
+  color: rgb(6, 122, 122);
+}
+
+span#good:active {
+  transform: scale(0.9, 0.9);
+  color: rgba(0, 255, 255, 0.671);
+}

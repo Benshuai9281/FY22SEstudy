@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/agate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script type="text/javascript">
+        hljs.highlightAll();
+    </script>
+</head>
+<body>
+    <button id="alert">alert</button>
+    <pre>
+        <code>
+    // JavaScript
+    window.alert("警告 とにかく危険です！")
+        </code>
+    </pre>
+    <button id="confirm">confirm</button>
+    <pre>
+        <code>
+    // 確認ウィンドウの結果を受け取ることができます
+    const result = window.confirm("確認させて下さい！いいですね？");
+    if (result) {
+        console.log("ありがとうございます");
+    } else {
+        console.warn("何でですか");
+    }
+        </code>
+    </pre>
+    <button id="prompt">prompt</button>
+    <pre>
+        <code>
+    // 入力ウィンドウの結果を受け取ることができます
+    const result = window.prompt("好きな食べ物はなんですか？");
+    console.log(result + "なんですね。それ僕も好きです");
+        </code>
+    </pre>
+    <button id="setInterval">setInterval</button>
+    <pre>
+        <code>
+    // setIntervalで呼び出すcallback
+    function incrementWindow() {
+        window.alert("消さないとどんどん増えますよ");
+        console.log("消さないとどんどん増えますよ");
+    }
+
+    // 止めるためにidを取得
+    const intervalId = window.setInterval(incrementWindow, 1000);
+
+    // 10秒後にsetIntervalを止める
+    window.setTimeout(() => {
+        window.clearInterval(intervalId);
+        console.log("もう増えません…");
+    }, 10000);
+        </code>
+    </pre>
+    <button></button>
+    <script src="index.js"></script>
+</body>
+</html>

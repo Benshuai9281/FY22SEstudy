@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+            <p>javascript入門 じゃんけんゲーム</p>
+            <p id="message-box">じゃんけーん…</p>
+            <p id="message-box2">スタート！</p>
+        </div>
+        <div class="container2">
+            <div class="cpu">
+                <p>【CPU】</p>
+                <img src="img/cpu.gif" id="cpuroulette" class="img-fit">
+            </div>
+            <div>　</div>
+            <div class="main">
+                <p>【あなた】</p>
+                <img src="img/junbi.png" id="roulette" class="img-fit">
+            </div>
+        </div>
+        <p></p>
+        <div class="controller">
+            <button id="rock">ぐー</button>
+            <button id="scissors">ちょき</button>
+            <button id="paper">ぱー</button>
+            <button id="retry">もう一回</button>
+        </div>
+        <p></p>
+        <div class="controller">
+            <input type="button" onclick="displayDate()" value="前回のゲーム記録を表示">
+            <input type="button" onclick="storageClear()" value="クリア">
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

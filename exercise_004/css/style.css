@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  gap: 10px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.single-line {
+  border-collapse: collapse;
+  width: 50vw;
+}
