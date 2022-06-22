@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .container2 {
@@ -43,3 +44,8 @@
 .controller {
   background-color: azure;
 }
+
+p#pp {
+  text-align: center;
+}
+
