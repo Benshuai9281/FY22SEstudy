@@ -40,8 +40,14 @@ function start(p_janken_r) {
   //勝ち負けの判定機プログラムです
   if (janken_r === p_janken_r) {
       Result_end = "あいこです";
+      count =  parseInt(localStorage.getItem('count')) - 1;
+      localStorage.setItem('count',count)
   } else if(p_janken_r === 0 && janken_r === 1) {
       Result_end = "あなたの【勝ち】";
+      btnrock.disabled = true;
+      btnpaper.disabled = true;
+      btnscissors.disabled = true;
+      btnretry.disabled = false;
       if(!localStorage.getItem('win')) {
         win = 1;
         localStorage.setItem('win',win)
@@ -51,6 +57,10 @@ function start(p_janken_r) {
       }
   }else if(p_janken_r === 1 && janken_r === 2) {
       Result_end = "あなたの【勝ち】";
+      btnrock.disabled = true;
+      btnpaper.disabled = true;
+      btnscissors.disabled = true;
+      btnretry.disabled = false;
       if(!localStorage.getItem('win')) {
         win = 1;
         localStorage.setItem('win',win)
@@ -60,6 +70,10 @@ function start(p_janken_r) {
       }
   }else if(p_janken_r === 2 && janken_r === 0) {
       Result_end = "あなたの【勝ち】";
+      btnrock.disabled = true;
+      btnpaper.disabled = true;
+      btnscissors.disabled = true;
+      btnretry.disabled = false;
       if(!localStorage.getItem('win')) {
         win = 1;
         localStorage.setItem('win',win)
@@ -69,6 +83,10 @@ function start(p_janken_r) {
       }
   }else {
       Result_end = "あなたの【負け】";
+      btnrock.disabled = true;
+      btnpaper.disabled = true;
+      btnscissors.disabled = true;
+      btnretry.disabled = false;
   }
   massage.innerHTML = janken[janken_r] + "V.S." + p_janken[p_janken_r] + " " + Result_end ;
   massage2.innerHTML = "じゃんけん回数；" + count + " 勝利回数；" + win;
@@ -83,28 +101,17 @@ function start(p_janken_r) {
 function play0() {
   playerr.src = "img/rock.png"
   start(0)
-  btnrock.disabled = true;
-  btnpaper.disabled = true;
-  btnscissors.disabled = true;
-  btnretry.disabled = false;
 }
 
 function play1() {
   playerr.src = "img/scissors.png"
   start(1)
-  btnrock.disabled = true;
-  btnpaper.disabled = true;
-  btnscissors.disabled = true;
-  btnretry.disabled = false;
+
 }
 
 function play2() {
   playerr.src = "img/paper.png"
   start(2)
-  btnrock.disabled = true;
-  btnpaper.disabled = true;
-  btnscissors.disabled = true;
-  btnretry.disabled = false;
 }
 
 function retry() {
