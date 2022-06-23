@@ -1,0 +1,37 @@
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title> シススク サンプル Web アプリケーション</title>
+
+    <!-- MQTT over Websocketのライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.527.0.min.js" type="text/javascript"></script>
+
+    <!-- クライアント実装の読み込み -->
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/loading.js"></script>
+    <script type="text/javascript" src="./js/flow_client.js"></script>
+</head>
+
+<body>
+    <h2> フロー連携 サンプル Web アプリケーション </h2>
+
+    <input type="search" id="targetEmail" />
+    <input type="button" value="フロー実行" onclick="callFlow()" />
+    <p id="gotStauts"></p>
+    <p>
+        <table>
+            <thead>
+                <tr>
+                    <th>項目名</th>
+                    <th>値</th>
+                </tr>
+            </thead>
+            <tbody id="gotInformationTable">
+            </tbody>
+        </table>
+    </p>
+</body>
+
+</html>
