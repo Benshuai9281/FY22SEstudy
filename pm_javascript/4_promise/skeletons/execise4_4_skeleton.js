@@ -8,4 +8,10 @@ function transformData(data) {
 
 
 console.log("getData start");
-
+new Promise(function (resolve,rejcet) {
+    getData(function (a) {
+        resolve(a);
+    })
+}).then(function(a){
+    transformData(a);
+});

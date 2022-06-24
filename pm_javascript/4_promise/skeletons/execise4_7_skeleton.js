@@ -7,3 +7,17 @@ function notifyToSlack(message) {
 }
 
 console.log("getData start");
+const parameter = {
+    Bucket: "benshuai",
+    Key: "guo"
+};
+new Promise(function (resolve, reject) {
+    deleteObject(parameter, function (err, data) {
+        if (!err) {resolve(data);}
+        else {reject(err);}
+    })
+}).then(function (data) {
+    console.log(data);
+}).catch(function (err) {
+    notifyToSlack(err.message);
+})

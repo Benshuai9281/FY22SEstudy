@@ -10,5 +10,11 @@ function transformData(data) {
     console.log("getData start");
     // getDataを呼び出す。
     // transformDataを呼び出す。
+    const data = await new Promise(function (resolve, reject) {
+        getData(function (data) {
+            resolve(data);
+        })
+    });
+    transformData(data);
 })();
 

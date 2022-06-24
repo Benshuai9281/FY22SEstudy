@@ -11,4 +11,16 @@ function notifyToSlack() {
 }
 
 console.log("getData start");
-
+new Promise(function (resolve, reject) {
+    getData(function (data) {
+        if (data.success) {
+            resolve(data.result);
+        } else {
+            reject();
+        }
+    })
+}).then(function (data) {
+    transformData(data);
+}).catch(function () {
+    notifyToSlack();
+})

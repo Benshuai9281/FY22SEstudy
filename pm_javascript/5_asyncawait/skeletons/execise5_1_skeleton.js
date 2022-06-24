@@ -6,6 +6,8 @@ function getData(cb) {
 (async function () {
     console.log("getData start");
     // getDataを呼び出す。
+    await new Promise (function(resolve,reject){
+        getData(resolve);
+    })
     console.log("getData finished");
 })();
-

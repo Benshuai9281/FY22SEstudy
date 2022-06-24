@@ -11,4 +11,18 @@ function notifyToSlack() {
 }
 
 console.log("getData start");
-
+new Promise(function (resolve, reject) {
+    getData(function (chenggong) {
+        if (chenggong) {
+            resolve(chenggong);
+        } else {
+            reject();
+        }
+    })
+}).then(function(chenggong){
+    transformData(chenggong);
+}).catch(function(){
+    notifyToSlack();
+}).finally(function(){
+    console.log("getData finished")
+});

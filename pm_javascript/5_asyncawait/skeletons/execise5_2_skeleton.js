@@ -5,6 +5,11 @@ function getData(cb) {
 
 (async function () {
     console.log("getData start");
-    // getDataを呼び出す。
+    await new Promise(function (resolve, reject) {
+        getData(function (a) {
+            console.log(a);
+            resolve();
+        })
+    })
     console.log("getData finished");
 })();

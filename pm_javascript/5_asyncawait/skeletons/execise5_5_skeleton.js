@@ -15,4 +15,18 @@ function notifyToSlack() {
     // getDataを呼び出す。
     // 成功したら取得したデータを引数にしてtransformDataを呼び出す。
     // 失敗したらnotifyToSlackを呼び出す。
+    try {
+        const result = await new Promise(function (resolve, reject) {
+            getData(function (data) {
+                if (data) {
+                    resolve(data);
+                } else {
+                    reject();
+                }
+            });
+        });
+        transformData(result);
+    } catch (error) {
+        notifyToSlack();
+    }
 })();

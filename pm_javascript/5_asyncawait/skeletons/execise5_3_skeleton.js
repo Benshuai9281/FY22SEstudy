@@ -10,7 +10,16 @@ function getData(cb) {
 
 (async function () {
     console.log("getData start");
-    // getDataを呼び出す。
+    await new Promise(function (resolve, reject) {
+        getData(function (result) {
+            if (result) {
+                console.log("getData completed");
+            } else {
+                console.log("getData failed");
+            }
+            resolve();
+        })
+    });
     console.log("getData finished");
 })();
 
