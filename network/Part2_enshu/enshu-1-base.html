@@ -8,9 +8,9 @@
   <body>
     <div id="app">
       <p>
-        入力テキスト：<!-- ①ここにテキスト入力を受け付けるタグを作成 -->
+        入力テキスト：<input type="text" v-model="textInput"/> <!-- ①ここにテキスト入力を受け付けるタグを作成 -->
       </p>
-      <!-- ②個々にイベントを取得しVueのメソッドを実行するタグを作成 -->
+      <button @click="clickButton" :disabled="nothing">Alert</button> <!-- ②個々にイベントを取得しVueのメソッドを実行するタグを作成 -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -19,7 +19,20 @@
         data: {
           textInput: "",//入力するテキストはここに入るように
         },
-        // ③個々にVueの影響下で動く関数を定義 アラートはalert('文字列')ででます
+        methods:{
+            clickButton : function (){
+                alert('You inputed: '+this.textInput)
+            }
+        },// ③個々にVueの影響下で動く関数を定義 アラートはalert('文字列')ででます
+        computed: {
+            nothing: function () {
+              if (this.textInput == "") {
+                return true
+              } else{
+                return false
+              }
+            }
+        }
       })
     </script>
   </body>
