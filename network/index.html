@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoinみるよ</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- EchartsのライブラリをCDNから持ってきているところ -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js"></script>
+
+  <!-- Vuetifyのライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-card class="mx-auto ma-2" width="900">
+        <v-card-title class="pb-0">
+          Bitcoin
+        </v-card-title>
+        <v-card-text class="text--primary">
+          <div>created by Satoshi Nakamoto</div>
+        </v-card-text>
+        <v-progress-linear
+          v-if="isLoading"
+          indeterminate
+          color="primary"
+        ></v-progress-linear>
+        <div id="bitFig" style="width: 100%;height:650px;" v-show="!isLoading"></div>
+        <v-card-actions>
+          <v-btn v-on:click="loadBitcoinData" color="primary">
+            Update
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-app>
+  </div>
+
+  <!-- JavaScriptの読み込み -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
