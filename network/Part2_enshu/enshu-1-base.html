@@ -10,7 +10,7 @@
       <p>
         入力テキスト：<input type="text" v-model="textInput"/> <!-- ①ここにテキスト入力を受け付けるタグを作成 -->
       </p>
-      <button v-on:click="clickButton" v-bind:disabled="nothing">Alert</button> <!-- ②個々にイベントを取得しVueのメソッドを実行するタグを作成 -->
+      <button v-on:click="clickButton" v-bind:disabled="nothing()">Alert</button> <!-- ②個々にイベントを取得しVueのメソッドを実行するタグを作成 -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -22,9 +22,7 @@
         methods:{
             clickButton : function (){
                 alert('You inputed: '+this.textInput)
-            }
-        },// ③個々にVueの影響下で動く関数を定義 アラートはalert('文字列')ででます
-        computed: {
+            },
             nothing: function () {
               if (this.textInput == "") {
                 return true
@@ -32,7 +30,7 @@
                 return false
               }
             }
-        }
+        },// ③個々にVueの影響下で動く関数を定義 アラートはalert('文字列')ででます
       })
     </script>
   </body>

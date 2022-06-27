@@ -10,7 +10,9 @@
       <p>
         映画タイトル：<input type="text" v-model="movieTitle"/>
       </p>
-      <button v-on:click="clickButton" v-bind:disabled="nothing">リストに追加</button>
+      <button v-on:click="clickButton" v-bind:disabled="nothing()">リストに追加</button>
+      <button v-on:click="clickList" >追加した順で表示</button>
+      <button v-on:click="clickGyakuList" >逆順で表示</button>
       <ul> 見た映画リスト
         <li v-for="movie in movieList">
           {{ movie }}
@@ -19,6 +21,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+      var count = 0
       var app = new Vue({//呪文
         el: '#app',
         data: {
@@ -28,32 +31,48 @@
         methods:{
             clickButton : function (){
                   console.log(this.movieList)
-                  var ex = false;
+                  var ex = false
                   for (var movie in this.movieList) {
                     if (this.movieTitle === this.movieList[movie]) {
-                          ex = true;
-                          break;
+                          ex = true
+                          break
                       }else{
-                          ex = false;// ②ここに配列movieListに入力されたmovieTitleを入れる
+                          ex = false// ②ここに配列movieListに入力されたmovieTitleを入れる
                       }
                   }
                   if (!ex) {
-                      this.movieList.push(this.movieTitle);
+                      if (count == 0) {
+                        this.movieList.push(this.movieTitle)
+                      }else{
+                        this.movieList.reverse()
+                        count = 0
+                        this.movieList.push(this.movieTitle)
+                      }
                   }else{
-                      alert("This movie is already in the list!");
+                      alert("This movie is already in the list!")
                   }
-                  this.movieTitle = "";//   配列更新したら、入力された文字列はクリア('')にしてください
-              }
-        },
-        computed: {
+                  this.movieTitle = ""//   配列更新したら、入力された文字列はクリア('')にしてください
+              },
             nothing: function () {
               if (this.movieTitle == "") {
                 return true
               } else{
                 return false
               }
+            },
+            clickList : function() {
+                if (count == 1) {
+                    this.movieList.reverse()
+                    count = 0
+                }
+            },
+            clickGyakuList : function() {
+                if (count == 0) {
+                    this.movieList.reverse()
+                    count = 1
+                }
             }
-        }
+        },
       })
     </script>
   </body>
