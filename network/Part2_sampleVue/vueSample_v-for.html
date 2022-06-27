@@ -11,7 +11,7 @@
       <ul>
         <!-- v-forにfor in文を入れると配列から各要素を切り出して使える -->
         <li v-for="favFruit in favFruits">
-          {{ favFruit }}
+          {{ favFruit }} 
         </li>
       </ul>
     </div>
@@ -21,7 +21,7 @@
       var app = new Vue({
         el: "#app",
         data: {
-          favFruits: ["apple", "orange", "peach"],
+          favFruits: ["apple", "orange", "peach","passion fruits", "banana", "watermelon","pear"],
         },
       })
     </script>

@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
 
-    <title>v-bindの例</title>
+    <title>v-modelの例</title>
   </head>
   <body>
     <!-- ここのdivタグにappID付けているから、ここのdivタグ配下はVueが効く -->
     <div id="app">
-      <p>{{ textInput }}</p>
+      <p>Input: {{ textInput }}</p>
       <!-- v-modelにVueでセットしたdataを与えるとHTMLの入力がバインディングされる -->
       <input type="text" v-model="textInput" />
     </div>

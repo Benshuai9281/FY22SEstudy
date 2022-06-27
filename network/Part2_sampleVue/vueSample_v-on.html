@@ -9,7 +9,7 @@
     <!-- ここのdivタグにappID付けているから、ここのdivタグ配下はVueが効く -->
     <div id="app">
         <!-- v-onでclickイベントをとれるようになり、Vueでセットしたメソッドを実行できる -->
-      <button v-on:click="clickButton">ボタン</button>
+      <button @click="clickButton">ボタン</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
