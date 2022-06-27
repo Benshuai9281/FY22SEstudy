@@ -38,6 +38,10 @@
             clickButton : function (){
               console.log(this.movieList)
                   var ex = false
+                  if (this.movie.rate == null) {
+                      alert ("Please input the rate!")
+                      return
+                  }
                   for (var movie in this.movieList) {
                     if (this.movie.title=== this.movieList[movie].title) {
                           ex = true
