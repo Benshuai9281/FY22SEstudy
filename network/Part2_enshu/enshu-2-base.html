@@ -21,7 +21,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-      var count = 0
+      var isreversed = 0
       var app = new Vue({//呪文
         el: '#app',
         data: {
@@ -41,11 +41,11 @@
                       }
                   }
                   if (!ex) {
-                      if (count == 0) {
+                      if (isreversed == 0) {
                         this.movieList.push(this.movieTitle)
                       }else{
                         this.movieList.reverse()
-                        count = 0
+                        isreversed = 0
                         this.movieList.push(this.movieTitle)
                       }
                   }else{
@@ -61,15 +61,15 @@
               }
             },
             clickList : function() {
-                if (count == 1) {
+                if (isreversed == 1) {
                     this.movieList.reverse()
-                    count = 0
+                    isreversed = 0
                 }
             },
             clickGyakuList : function() {
-                if (count == 0) {
+                if (isreversed == 0) {
                     this.movieList.reverse()
-                    count = 1
+                    isreversed = 1
                 }
             }
         },
