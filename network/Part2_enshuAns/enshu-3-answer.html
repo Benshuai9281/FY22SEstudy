@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>演習3</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        映画タイトル：<input type="text" v-model="movie.title"/>
+        <select v-model='movie.rate'>
+            <option v-for="rate in rates">{{rate}}</option>
+        </select>
+      </p>
+      <button v-on:click="clickButton">リストに追加</button>
+
+      <ul>
+        <li v-for="movie in movieList">
+          {{ movie.title }}
+          {{ movie.rate }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          movieList: [],
+          movie: {
+            title: '',
+            rate: null
+          },
+          rates: [1, 2, 3, 4, 5]
+        },
+        methods:{
+            clickButton : function (){
+                this.movieList.push(this.movie)
+                this.movie = {
+                    title: '',
+                    rate: null
+                }
+            }
+        }
+      })
+    </script>
+  </body>
+</html>

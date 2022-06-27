@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>v-bindの例</title>
+  </head>
+  <body>
+    <!-- ここのdivタグにappID付けているから、ここのdivタグ配下はVueが効く -->
+    <div id="app">
+        <!-- v-onでclickイベントをとれるようになり、Vueでセットしたメソッドを実行できる -->
+      <button v-on:click="clickButton">ボタン</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+            message: 'Button is clicked !!'
+        },
+        // ここのmethods内に関数を定義するとVueの影響下で利用可能に
+        methods:{
+            clickButton : function (){
+                alert(this.message)
+            }
+        }
+      })
+    </script>
+  </body>
+</html>

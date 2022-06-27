@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>リストの表示</title>
+  </head>
+  <style></style>
+  <body>
+    <!-- ここのdivタグにappID付けているから、ここのdivタグ配下はVueが効く -->
+    <div id="app">
+      <ul>
+        <!-- v-forにfor in文を入れると配列から各要素を切り出して使える -->
+        <li v-for="favFruit in favFruits">
+          {{ favFruit }}
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          favFruits: ["apple", "orange", "peach"],
+        },
+      })
+    </script>
+  </body>
+</html>

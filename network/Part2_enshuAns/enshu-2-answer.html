@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>演習2</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        映画タイトル：<input type="text" v-model="movieTitle"/>
+      </p>
+      <button v-on:click="clickButton">リストに追加</button>
+      <ul> 見た映画リスト
+        <li v-for="movie in movieList">
+          {{ movie }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          movieList: [],
+          movieTitle: '',
+        },
+        methods:{
+            clickButton : function (){
+                this.movieList.push(this.movieTitle)
+                this.movieTitle = ''
+            }
+        }
+      })
+    </script>
+  </body>
+</html>

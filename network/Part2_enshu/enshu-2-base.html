@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>演習2</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        映画タイトル：<input type="text" v-model="movieTitle"/>
+      </p>
+      <button v-on:click="clickButton">リストに追加</button>
+      <ul> 見た映画リスト
+        <!-- ①ここにリストで追加できるようにする データが更新されたら自動で変わる -->
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({//呪文
+        el: '#app',
+        data: {
+          movieList: [],//これ使ってリストで表示
+          movieTitle: '',//これ使って入力テキスト受け付けて
+        },
+        methods:{
+            clickButton : function (){
+                // ②ここに配列movieListに入力されたmovieTitleを入れる
+                //   配列更新したら、入力された文字列はクリア('')にしてください
+            }
+        }
+      })
+    </script>
+  </body>
+</html>

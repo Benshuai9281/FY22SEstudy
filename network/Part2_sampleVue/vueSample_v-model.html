@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>v-bindの例</title>
+  </head>
+  <body>
+    <!-- ここのdivタグにappID付けているから、ここのdivタグ配下はVueが効く -->
+    <div id="app">
+      <p>{{ textInput }}</p>
+      <!-- v-modelにVueでセットしたdataを与えるとHTMLの入力がバインディングされる -->
+      <input type="text" v-model="textInput" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          textInput: "",
+        },
+      })
+    </script>
+  </body>
+</html>

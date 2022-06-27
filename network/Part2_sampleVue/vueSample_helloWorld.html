@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue</title>
+  </head>
+  <body>
+    <!-- ここのh1タグにappID付けているから、ここのh1タグ配下はVueが効く -->
+    <h1 id="app">{{ message }}</h1>
+    <!-- Vueが使えるようにする -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // Vueのインスタンス(オブジェクトという理解でOK)が生成される
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Benshuai!",
+        },
+      })
+    </script>
+     
+  </body>
+</html>

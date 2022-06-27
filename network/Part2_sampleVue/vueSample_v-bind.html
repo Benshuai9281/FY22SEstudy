@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>属性へのバインドの例</title>
+  </head>
+  <body>
+    <!-- ここのh1タグにappID付けているから、ここのh1タグ配下はVueが効く -->
+    <h1 id="app">
+      <!-- v-bind:によってhrefにVueのプロパティを入れることができる -->
+      <a v-bind:href="kmUrl">KMのTDHホームページへ</a>
+    </h1>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          kmUrl: "https://konicaminoltaglobal.sharepoint.com/sites/kmo-kmidiv/TDH_HP/Pages/top.aspx",
+        },
+      })
+    </script>
+  </body>
+</html>
