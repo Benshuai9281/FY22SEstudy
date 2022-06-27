@@ -8,13 +8,19 @@
   <body>
     <div id="app">
       <p>
-        映画タイトル：<!-- ①ここにテキスト入力を受け付けるタグを作成 -->
-        <!-- ②セレクト可能なタグを用意 Optionは繰り返しでうまいこと作成 -->
+        映画タイトル：<input type="text" v-model="movie.title"/> <!-- ①ここにテキスト入力を受け付けるタグを作成 -->
+        <select v-model='movie.rate' v-bind:disabled="nothing">
+            <option v-for="rate in rates">{{rate}}</option>
+        </select><!-- ②セレクト可能なタグを用意 Optionは繰り返しでうまいこと作成 -->
       </p>
-      <button v-on:click="clickButton">リストに追加</button>
+      <button v-on:click="clickButton" v-bind:disabled="nothing">リストに追加</button>
 
       <ul>
-        <!-- ③ここにリストで追加できるようにする データが更新されたら自動で変わる -->
+        <li v-for="movie in movieList">
+          {{ movie.title }}
+          {{ movie.rate }}
+        </li><!-- ③ここにリストで追加できるようにする データが更新されたら自動で変わる -->
+      </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
@@ -26,11 +32,38 @@
             title: '', //movie.title
             rate: null //movie.rate
           },
-          rates: [1, 2, 3, 4, 5]//選択できるrateの配列
+          rates: ["★", "★★", "★★★", "★★★★", "★★★★★"]//選択できるrateの配列
         },
         methods:{
             clickButton : function (){
-                // ④演習2っぽく配列にデータを入れる
+              console.log(this.movieList)
+                  var ex = false
+                  for (var movie in this.movieList) {
+                    if (this.movie.title=== this.movieList[movie].title) {
+                          ex = true
+                          break;
+                      }else{
+                          ex = false
+                      }
+                  }
+                  if (!ex) {
+                      this.movieList.push(this.movie)
+                  }else{
+                      alert("This movie is already in the list!") // ②ここに配列movieListに入力されたmovieTitleを入れる
+                  }
+                  this.movie = {
+                    title: '',
+                    rate: null
+                  }//   配列更新したら、入力された文字列はクリア('')にしてください
+              }// ④演習2っぽく配列にデータを入れる
+        },
+        computed: {
+            nothing: function () {
+              if (this.movie.title == "") {
+                return true
+              } else{
+                return false
+              }
             }
         }
       })

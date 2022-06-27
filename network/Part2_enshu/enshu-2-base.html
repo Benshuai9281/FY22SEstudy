@@ -10,9 +10,11 @@
       <p>
         映画タイトル：<input type="text" v-model="movieTitle"/>
       </p>
-      <button v-on:click="clickButton">リストに追加</button>
+      <button v-on:click="clickButton" v-bind:disabled="nothing">リストに追加</button>
       <ul> 見た映画リスト
-        <!-- ①ここにリストで追加できるようにする データが更新されたら自動で変わる -->
+        <li v-for="movie in movieList">
+          {{ movie }}
+        </li><!-- ①ここにリストで追加できるようにする データが更新されたら自動で変わる -->
       </ul>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -25,8 +27,31 @@
         },
         methods:{
             clickButton : function (){
-                // ②ここに配列movieListに入力されたmovieTitleを入れる
-                //   配列更新したら、入力された文字列はクリア('')にしてください
+                  console.log(this.movieList)
+                  var ex = false;
+                  for (var movie in this.movieList) {
+                    if (this.movieTitle === this.movieList[movie]) {
+                          ex = true;
+                          break;
+                      }else{
+                          ex = false;// ②ここに配列movieListに入力されたmovieTitleを入れる
+                      }
+                  }
+                  if (!ex) {
+                      this.movieList.push(this.movieTitle);
+                  }else{
+                      alert("This movie is already in the list!");
+                  }
+                  this.movieTitle = "";//   配列更新したら、入力された文字列はクリア('')にしてください
+              }
+        },
+        computed: {
+            nothing: function () {
+              if (this.movieTitle == "") {
+                return true
+              } else{
+                return false
+              }
             }
         }
       })
