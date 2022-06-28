@@ -1,4 +1,4 @@
-#include <Arduino.h>
+#include <M5Core2.h>
 
 void setup() {
   // put your setup code here, to run once:
